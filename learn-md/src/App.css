@@ -146,7 +146,7 @@ footer{margin-top:90px;background:var(--ink);color:var(--cream);padding-top:40px
 .login-screen .form-head h1{font-family:'Fraunces', serif;font-weight:500;font-size:28px;letter-spacing:-0.01em;}
 .login-screen .form-head p{margin-top:8px;font-size:13.5px;color:var(--ink-soft);}
 .login-screen .role-toggle{display:flex;gap:6px;background:var(--cream-2);border:1px solid var(--line);border-radius:14px;padding:5px;margin-bottom:26px;}
-.login-screen .role-toggle button{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 12px;border-radius:10px;font-size:13px;font-weight:700;color:var(--indigo);transition:background .2s ease,color .2s ease,box-shadow .2s ease;}
+.login-screen .role-toggle button{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 12px;border-radius:10px;border:none;background:transparent;font-size:13px;font-weight:700;color:var(--indigo);transition:background .2s ease,color .2s ease,box-shadow .2s ease;}
 .login-screen .role-toggle button svg{width:16px;height:16px;}
 .login-screen .role-toggle button.active{background:var(--ink);color:var(--cream);box-shadow:none;}
 .login-screen .field{margin-bottom:18px;}
