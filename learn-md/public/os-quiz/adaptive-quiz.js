@@ -1029,15 +1029,7 @@ function buildReviewList() {
 
 function handleExit() {
 
-  const confirmed =
-    window.confirm(
-      "Exit the quiz? Your progress will be lost."
-    );
-
-  if (!confirmed) return;
-
-  window.location.href =
-    "/#dashboard";
+  const confirmed = window.location.href = "/#dashboard";
 }
 
 
