@@ -604,5 +604,207 @@
   </aside>
 
 </div>
+<script>
+  const translations = {
+    en: {
+      dashboard: 'Dashboard',
+      myCourses: 'My Courses',
+      quizzes: 'Quizzes',
+      lectures: 'Lectures',
+      mentors: 'Mentors',
+      schedule: 'Schedule',
+      settings: 'Settings',
+      menu: 'Menu',
+      general: 'General',
+      greeting: 'Good morning, Rahul! ฅᨐฅ',
+      dueMessage: 'You have <b>2 quizzes</b> and <b>1 lecture</b> due this week.',
+      searchPlaceholder: 'Search mentors, courses...',
+      allAssignments: 'All Assignments',
+      quizzesTab: 'Quizzes',
+      lecturesTab: 'Video Lectures',
+      mentorTab: 'By Mentor',
+      sortChip: 'Sorted by · Due date',
+      logout: 'Logout',
+      assignmentsHeading: 'Your Learning Path — Grade XII',
+      viewCourse: 'View course',
+      mentorLabel: 'Mentor ·',
+      levelLabel: 'LVL 4 · 1,280 XP',
+      roadmapStatuses: ['Complete', 'Complete', 'In Progress', 'Locked', 'Locked', 'Goal'],
+      roadmapLabels: ['Mathematics', 'Physics', 'Chemistry', 'AI', 'English', 'Boards'],
+      calendarTitle: 'Aug 2026',
+      dailyStreak: 'Daily Streak',
+      streakLabel: 'days in a row — keep it going',
+      statsLabels: ['Quizzes completed', 'Lectures watched', 'Avg. quiz score', 'Active mentors'],
+      statsValues: ['27', '14h', '92%', '5'],
+      assignments: [
+        {
+          title: 'Operating System Fundamentals',
+          pill: 'QUIZ',
+          meta: 'Assigned by <span class="mentor">Abhishek Sen</span> · 15 questions · Due today',
+          progress: '6/15 answered'
+        },
+        {
+          title: 'Intro to Artificial Intelligence',
+          pill: 'LECTURE',
+          meta: 'Assigned by <span class="mentor">Saswati Singh</span> · 42 min video · New',
+          progress: '4 min watched'
+        },
+        {
+          title: 'Rotational Motion',
+          pill: 'QUIZ',
+          meta: 'Assigned by <span class="mentor">Karan Malik</span> · 20 questions · Due in 2 days',
+          progress: 'Not started'
+        },
+        {
+          title: 'Data Structures: Trees & Graphs',
+          pill: 'LECTURE',
+          meta: 'Assigned by <span class="mentor">Abdul Bari</span> · 35 min video · Completed',
+          progress: 'Watched'
+        }
+      ]
+    },
+    hi: {
+      dashboard: 'डैशबोर्ड',
+      myCourses: 'मेरे कोर्स',
+      quizzes: 'क्विज़',
+      lectures: 'लेक्चर',
+      mentors: 'मेंटर्स',
+      schedule: 'शेड्यूल',
+      settings: 'सेटिंग्स',
+      menu: 'मेनू',
+      general: 'सामान्य',
+      greeting: 'सुप्रभात, राहुल! ฅᨐฅ',
+      dueMessage: 'इस हफ्ते आपके पास <b>2 क्विज़</b> और <b>1 लेक्चर</b> हैं।',
+      searchPlaceholder: 'मेंटर्स, कोर्स खोजें...',
+      allAssignments: 'सभी असाइनमेंट',
+      quizzesTab: 'क्विज़',
+      lecturesTab: 'वीडियो लेक्चर',
+      mentorTab: 'मेंटर के अनुसार',
+      sortChip: 'छंटाई · नियत तिथि',
+      logout: 'लॉगआउट',
+      assignmentsHeading: 'आपका सीखने का रास्ता — कक्षा XII',
+      viewCourse: 'कोर्स देखें',
+      mentorLabel: 'मेंटर ·',
+      levelLabel: 'लेवल 4 · 1,280 XP',
+      roadmapStatuses: ['पूर्ण', 'पूर्ण', 'प्रगति पर', 'लॉक', 'लॉक', 'लक्ष्य'],
+      roadmapLabels: ['गणित', 'भौतिकी', 'रसायन विज्ञान', 'एआई', 'अंग्रेज़ी', 'बोर्ड्स'],
+      calendarTitle: 'अगस्त 2026',
+      dailyStreak: 'दैनिक स्ट्रीक',
+      streakLabel: 'दिनों से जारी — इसे जारी रखें',
+      statsLabels: ['पूरा किए गए क्विज़', 'देखे गए लेक्चर', 'औसत क्विज़ स्कोर', 'सक्रिय मेंटर'],
+      statsValues: ['27', '14h', '92%', '5'],
+      assignments: [
+        {
+          title: 'ऑपरेटिंग सिस्टम फंडामेंटल्स',
+          pill: 'क्विज़',
+          meta: '<span class="mentor">अभिषेक सेन</span> द्वारा असाइन किया गया · 15 प्रश्न · आज देय',
+          progress: '6/15 उत्तर दिए गए'
+        },
+        {
+          title: 'आर्टिफिशियल इंटेलिजेंस का परिचय',
+          pill: 'लेक्चर',
+          meta: '<span class="mentor">ससवती सिंह</span> द्वारा असाइन किया गया · 42 मिनट वीडियो · नया',
+          progress: '4 मिनट देखा गया'
+        },
+        {
+          title: 'घूर्णी गति',
+          pill: 'क्विज़',
+          meta: '<span class="mentor">करण मलिक</span> द्वारा असाइन किया गया · 20 प्रश्न · 2 दिनों में देय',
+          progress: 'शुरू नहीं हुआ'
+        },
+        {
+          title: 'डेटा स्ट्रक्चर: ट्रीज़ और ग्राफ़',
+          pill: 'लेक्चर',
+          meta: '<span class="mentor">अब्दुल बारी</span> द्वारा असाइन किया गया · 35 मिनट वीडियो · पूर्ण',
+          progress: 'देखा गया'
+        }
+      ]
+    }
+  };
+
+  const storedLang = localStorage.getItem('learn-md-lang') || 'en';
+  let currentLang = storedLang === 'hi' ? 'hi' : 'en';
+  const langToggle = document.getElementById('lang-toggle');
+  const navLabels = Array.from(document.querySelectorAll('.nav-item .lbl'));
+  const menuLabels = document.querySelectorAll('.nav-label');
+  const greeting = document.querySelector('.greeting h1');
+  const dueMessage = document.querySelector('.greeting p');
+  const searchInput = document.querySelector('.search-box input');
+  const tabs = Array.from(document.querySelectorAll('.tab'));
+  const sortChip = document.querySelector('.sort-chip');
+  const logoutBtn = document.getElementById('logout-btn');
+  const assignmentsHeading = document.querySelector('.section-title h2');
+  const viewCourseLink = document.querySelector('.section-title .see-all');
+  const roadmapMentor = document.querySelector('.roadmap-head .eyebrow');
+  const roadmapLevel = document.querySelector('.roadmap-head .lvl-pill');
+  const roadmapLabels = Array.from(document.querySelectorAll('.roadmap-card .label'));
+  const roadmapSubs = Array.from(document.querySelectorAll('.roadmap-card .sub'));
+  const calendarTitle = document.querySelector('.panel-card .panel-head h3');
+  const dailyStreakTitle = document.querySelector('.streak-card .eyebrow');
+  const streakLabel = document.querySelector('.streak-card .streak-num-label');
+  const statLabels = Array.from(document.querySelectorAll('.stat-grid .lbl'));
+  const statValues = Array.from(document.querySelectorAll('.stat-grid .num'));
+  const assignmentCards = Array.from(document.querySelectorAll('.assign-card'));
+
+  function applyLanguage(nextLang) {
+    const copy = translations[nextLang];
+    const items = [navLabels[0], navLabels[1], navLabels[2], navLabels[3], navLabels[4], navLabels[5], navLabels[6]];
+    const values = [copy.dashboard, copy.myCourses, copy.quizzes, copy.lectures, copy.mentors, copy.schedule, copy.settings];
+    items.forEach((item, index) => {
+      if (item) item.textContent = values[index];
+    });
+    menuLabels[0] && (menuLabels[0].textContent = copy.menu);
+    menuLabels[1] && (menuLabels[1].textContent = copy.general);
+    if (greeting) greeting.textContent = copy.greeting;
+    if (dueMessage) dueMessage.innerHTML = copy.dueMessage;
+    if (searchInput) searchInput.placeholder = copy.searchPlaceholder;
+    if (tabs[0]) tabs[0].textContent = copy.allAssignments;
+    if (tabs[1]) tabs[1].textContent = copy.quizzesTab;
+    if (tabs[2]) tabs[2].textContent = copy.lecturesTab;
+    if (tabs[3]) tabs[3].textContent = copy.mentorTab;
+    if (sortChip) sortChip.textContent = copy.sortChip;
+    if (logoutBtn) logoutBtn.textContent = copy.logout;
+    if (assignmentsHeading) assignmentsHeading.textContent = copy.assignmentsHeading;
+    if (viewCourseLink) viewCourseLink.textContent = copy.viewCourse;
+    if (roadmapMentor) roadmapMentor.innerHTML = `${copy.mentorLabel} <b>Pratibha Sen</b>`;
+    if (roadmapLevel) roadmapLevel.textContent = copy.levelLabel;
+    roadmapLabels.forEach((label, index) => {
+      if (label) label.textContent = copy.roadmapLabels[index] || label.textContent;
+    });
+    roadmapSubs.forEach((sub, index) => {
+      if (sub) sub.textContent = copy.roadmapStatuses[index] || sub.textContent;
+    });
+    if (calendarTitle) calendarTitle.textContent = copy.calendarTitle;
+    if (dailyStreakTitle) dailyStreakTitle.textContent = copy.dailyStreak;
+    if (streakLabel) streakLabel.textContent = copy.streakLabel;
+    statLabels.forEach((label, index) => {
+      if (label) label.textContent = copy.statsLabels[index] || label.textContent;
+    });
+    statValues.forEach((value, index) => {
+      if (value) value.textContent = copy.statsValues[index] || value.textContent;
+    });
+    assignmentCards.forEach((card, index) => {
+      const assignment = copy.assignments[index];
+      if (!assignment) return;
+      const title = card.querySelector('.assign-top h3');
+      const pill = card.querySelector('.pill');
+      const meta = card.querySelector('.assign-meta');
+      const progress = card.querySelector('.assign-progress .pct');
+      if (title) title.textContent = assignment.title;
+      if (pill) pill.textContent = assignment.pill;
+      if (meta) meta.innerHTML = assignment.meta;
+      if (progress) progress.textContent = assignment.progress;
+    });
+    if (langToggle) langToggle.textContent = nextLang === 'en' ? 'EN / हिंदी' : 'EN / हिंदी';
+    document.documentElement.lang = nextLang;
+    localStorage.setItem('learn-md-lang', nextLang);
+  }
+
+  applyLanguage(currentLang);
+  langToggle?.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'hi' : 'en';
+    applyLanguage(currentLang);
+  });
+</script>
 </body>
 </html>
