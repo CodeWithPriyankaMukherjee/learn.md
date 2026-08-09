@@ -360,8 +360,13 @@ footer{margin-top:90px;background:var(--ink);color:var(--cream);padding-top:40px
 }
 
 @media (prefers-reduced-motion: reduce){
-  *{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;}
+   * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
+
 /* =========================================================
    LOGIN SCREEN — FINAL LAYOUT FIX
    ========================================================= */
