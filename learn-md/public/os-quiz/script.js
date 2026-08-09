@@ -9,7 +9,7 @@
   const script = document.createElement('script');
 
   script.type = 'module';
-  script.src = '/src/adaptive-quiz.js';
+  script.src = './adaptive-quiz.js';
   script.setAttribute('data-adaptive-loader', '1');
 
   document.body.appendChild(script);
