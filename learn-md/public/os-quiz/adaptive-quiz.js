@@ -1,5 +1,5 @@
-import { auth } from "./lib/firebase.ts";
-import { saveQuizAttempt } from "./lib/quizService.ts";
+import { auth } from "./firebase.js";
+import { saveQuizAttempt } from "./quizService.js";
 
 const QUESTION_BANK = [
   // EASY
