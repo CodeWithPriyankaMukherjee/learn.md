@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Operating System Fundamentals — LEARN.MD</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========================================================
+       HEADER
+  ========================================================= -->
+  <header class="app-header">
+    <div class="app-header__inner">
+      <div class="brand">
+        <span class="brand__mark">LM</span>
+        <span class="brand__name">LEARN.MD</span>
+      </div>
+      <p class="course-tag">Operating System Fundamentals</p>
+      <button type="button" class="exit-btn" id="exit-btn">
+        Exit quiz
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       MAIN — QUIZ MODE
+  ========================================================= -->
+  <main class="quiz-shell" id="quiz-shell">
+
+    <!-- PROGRESS -->
+    <section class="progress-section" aria-label="Quiz progress">
+      <div class="progress-section__meta">
+        <span class="progress-section__count">
+          Question <span id="current-question-number">1</span> of <span id="total-question-number">5</span>
+        </span>
+      </div>
+      <div class="progress-track" id="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1">
+        <!-- segments injected by script.js -->
+      </div>
+      <p class="checkpoint-label">
+        CHECKPOINT <span id="checkpoint-current">1</span> OF <span id="checkpoint-total">5</span>
+      </p>
+    </section>
+
+    <!-- QUESTION -->
+    <section class="question-section" id="question-section" aria-live="polite">
+      <p class="question-eyebrow">QUESTION <span id="question-index">01</span></p>
+      <h1 class="question-text" id="question-text">Question text goes here</h1>
+
+      <fieldset class="options-list" id="options-list">
+        <legend class="visually-hidden">Answer options</legend>
+        <!-- option <label> elements injected by script.js -->
+      </fieldset>
+
+      <p class="validation-message" id="validation-message" role="alert" hidden>
+        Select an answer to continue.
+      </p>
+    </section>
+
+    <!-- NAVIGATION -->
+    <nav class="quiz-nav" aria-label="Quiz navigation">
+      <button type="button" class="nav-btn nav-btn--prev" id="prev-btn" disabled>
+        <span aria-hidden="true">&larr;</span> Previous
+      </button>
+      <button type="button" class="nav-btn nav-btn--next" id="next-btn">
+        Next <span aria-hidden="true">&rarr;</span>
+      </button>
+    </nav>
+
+  </main>
+
+  <!-- ========================================================
+       RESULTS
+  ========================================================= -->
+  <main class="results-shell" id="results-shell" hidden>
+    <!--<section class="results-section" id="results-section" aria-label="Quiz results">
+      <p class="results-eyebrow">QUIZ COMPLETE</p>
+
+      <div class="results-score">
+        <span class="results-score__fraction" id="results-fraction">4 / 5</span>
+        <span class="results-score__percent" id="results-percent">80%</span>
+      </div>
+
+      <dl class="results-stats">
+        <div class="results-stats__row">
+          <dt>Correct answers</dt>
+          <dd id="results-correct">4</dd>
+        </div>
+        <div class="results-stats__row">
+          <dt>Questions answered</dt>
+          <dd id="results-answered">5</dd>
+        </div>
+      </dl>
+
+      <div class="results-actions">
+        <button type="button" class="nav-btn nav-btn--secondary" id="review-btn">Review Answers</button>
+        <button type="button" class="nav-btn nav-btn--next" id="dashboard-btn">Return to Dashboard</button>
+      </div>
+    </section>
+    <!-- RESULTS -->
+<section
+  class="results-section"
+  id="results-section"
+  hidden
+  aria-label="Quiz results"
+>
+  <p class="results-eyebrow">QUIZ COMPLETE</p>
+
+  <div class="results-score">
+    <span class="results-score__fraction" id="results-fraction"></span>
+    <span class="results-score__percent" id="results-percent"></span>
+  </div>
+
+  <dl class="results-stats">
+    <div class="results-stats__row">
+      <dt>Correct answers</dt>
+      <dd id="results-correct"></dd>
+    </div>
+
+    <div class="results-stats__row">
+      <dt>Questions answered</dt>
+      <dd id="results-answered"></dd>
+    </div>
+  </dl>
+
+  <div class="results-actions">
+    <button
+      type="button"
+      class="nav-btn nav-btn--secondary"
+      id="review-btn"
+    >
+      Review Answers
+    </button>
+
+    <button
+      type="button"
+      class="nav-btn nav-btn--next"
+      id="dashboard-btn"
+    >
+      Return to Dashboard
+    </button>
+  </div>
+</section>
+
+    <!-- REVIEW -->
+    <section class="review-section" id="review-section" hidden aria-label="Answer review">
+      <p class="review-eyebrow">REVIEW</p>
+      <ol class="review-list" id="review-list">
+        <!-- review items injected by script.js -->
+      </ol>
+      <div class="results-actions">
+        <button type="button" class="nav-btn nav-btn--secondary" id="back-to-summary-btn">Back to Summary</button>
+        <button type="button" class="nav-btn nav-btn--next" id="dashboard-btn-2">Return to Dashboard</button>
+      </div>
+    </section>
+  </main>
+<script src="script.js"></script>
+
+</html>
