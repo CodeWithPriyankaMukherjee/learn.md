@@ -1325,5 +1325,129 @@ loadRealTeacherData();
     window.location.href = "/";
   });
 </script>
+<script>
+  const translations = {
+    en: {
+      eyebrow: 'TEACHER DASHBOARD',
+      title: 'Good morning, Teacher.',
+      sub: 'Monitor student progress, identify learning gaps, and intervene before they become exam problems.',
+      status: 'Live · 24 active students',
+      nav: ['Dashboard', 'Students', 'Quizzes', 'Progress', 'Analytics'],
+      teacherName: 'Ritika Nair',
+      teacherSubject: 'Computer Science',
+      sectionTitle: 'Students needing attention',
+      sectionSub: 'Students showing persistent difficulty across recent assessments.',
+      viewAll: 'View all students →',
+      searchPlaceholder: 'Search by student name or topic...',
+      allStatuses: 'All statuses',
+      highRisk: 'High Risk',
+      needsSupport: 'Needs Support',
+      watch: 'Watch',
+      onTrack: 'On Track',
+      tableHeaders: ['Student', 'Topic', 'Average score', 'Difficulty reached', 'Status'],
+      logout: 'Logout',
+      statLabels: ['Total students', 'Class average', 'Quiz completion', 'Need attention'],
+      statDeltas: ['+4% from last week', '78%', '84%', '6 students'],
+      emptyState: 'No students match this search or filter.'
+    },
+    hi: {
+      eyebrow: 'शिक्षक डैशबोर्ड',
+      title: 'सुप्रभात, शिक्षक।',
+      sub: 'छात्रों की प्रगति देखें, सीखने की कमियों को पहचानें, और उन्हें परीक्षा की समस्या बनने से पहले हस्तक्षेप करें।',
+      status: 'लाइव · 24 सक्रिय छात्र',
+      nav: ['डैशबोर्ड', 'छात्र', 'क्विज़', 'प्रगति', 'विश्लेषण'],
+      teacherName: 'रीतिका नायर',
+      teacherSubject: 'कंप्यूटर साइंस',
+      sectionTitle: 'ध्यान देने वाले छात्र',
+      sectionSub: 'हाल के मूल्यांकन में लगातार कठिनाई दिखाने वाले छात्र।',
+      viewAll: 'सभी छात्र देखें →',
+      searchPlaceholder: 'छात्र का नाम या विषय खोजें...',
+      allStatuses: 'सभी स्थिति',
+      highRisk: 'उच्च जोखिम',
+      needsSupport: 'सहायता चाहिए',
+      watch: 'ध्यान रखें',
+      onTrack: 'रूट पर',
+      tableHeaders: ['छात्र', 'विषय', 'औसत स्कोर', 'पहुंची कठिनाई', 'स्थिति'],
+      logout: 'लॉगआउट',
+      statLabels: ['कुल छात्र', 'कक्षा औसत', 'क्विज़ पूरा होना', 'ध्यान देने की ज़रूरत'],
+      statDeltas: ['पिछले हफ्ते से +4%', '78%', '84%', '6 छात्र'],
+      emptyState: 'इस खोज या फ़िल्टर से कोई छात्र मेल नहीं खाता।'
+    }
+  };
+
+  const storedLang = localStorage.getItem('learn-md-lang') || 'en';
+  let currentLang = storedLang === 'hi' ? 'hi' : 'en';
+  const langToggle = document.getElementById('lang-toggle');
+  const eyebrow = document.querySelector('.page-header__eyebrow');
+  const title = document.querySelector('.page-header h1');
+  const sub = document.querySelector('.page-header__sub');
+  const status = document.getElementById('status-indicator-text');
+  const navItems = Array.from(document.querySelectorAll('.side-nav__item'));
+  const teacherName = document.querySelector('.teacher-card__name');
+  const teacherSubject = document.querySelector('.teacher-card__subject');
+  const sectionTitle = document.querySelector('#students-section h2');
+  const sectionSub = document.querySelector('#students-section .section__head p');
+  const searchInput = document.getElementById('student-search');
+  const filterSelect = document.getElementById('status-filter');
+  const viewAllButton = document.getElementById('view-all-btn');
+  const logoutButton = document.getElementById('teacher-logout');
+  const tableHeaders = Array.from(document.querySelectorAll('.students-table thead th'));
+  const statLabels = Array.from(document.querySelectorAll('.stat-card__label'));
+  const statDeltas = Array.from(document.querySelectorAll('.stat-card__delta'));
+
+  function applyLanguage(nextLang) {
+    const copy = translations[nextLang];
+    if (eyebrow) eyebrow.textContent = copy.eyebrow;
+    if (title) title.textContent = copy.title;
+    if (sub) sub.textContent = copy.sub;
+    if (status) status.textContent = copy.status;
+
+    navItems.slice(0, 5).forEach((item, index) => {
+      if (item) {
+        const label = item.querySelector('span');
+        const textNode = Array.from(item.childNodes).find((node) => node.nodeType === Node.TEXT_NODE && node.textContent?.trim());
+        if (label) {
+          const text = item.textContent?.replace(/\s+/g, ' ').trim();
+          if (text) {
+            item.innerHTML = `${label.outerHTML}${copy.nav[index]}`;
+          }
+        }
+      }
+    });
+
+    if (teacherName) teacherName.textContent = copy.teacherName;
+    if (teacherSubject) teacherSubject.textContent = copy.teacherSubject;
+    if (sectionTitle) sectionTitle.textContent = copy.sectionTitle;
+    if (sectionSub) sectionSub.textContent = copy.sectionSub;
+    if (searchInput) searchInput.placeholder = copy.searchPlaceholder;
+    if (filterSelect) {
+      filterSelect.options[0].text = copy.allStatuses;
+      filterSelect.options[1].text = copy.highRisk;
+      filterSelect.options[2].text = copy.needsSupport;
+      filterSelect.options[3].text = copy.watch;
+      filterSelect.options[4].text = copy.onTrack;
+    }
+    if (viewAllButton) viewAllButton.textContent = copy.viewAll;
+    if (logoutButton) logoutButton.textContent = copy.logout;
+    tableHeaders.forEach((header, index) => {
+      if (header) header.textContent = copy.tableHeaders[index];
+    });
+    statLabels.forEach((label, index) => {
+      if (label) label.textContent = copy.statLabels[index] || label.textContent;
+    });
+    statDeltas.forEach((delta, index) => {
+      if (delta) delta.textContent = copy.statDeltas[index] || delta.textContent;
+    });
+    if (langToggle) langToggle.textContent = nextLang === 'en' ? 'EN / हिंदी' : 'EN / हिंदी';
+    document.documentElement.lang = nextLang;
+    localStorage.setItem('learn-md-lang', nextLang);
+  }
+
+  applyLanguage(currentLang);
+  langToggle?.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'hi' : 'en';
+    applyLanguage(currentLang);
+  });
+</script>
 </body>
 </html>
