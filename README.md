@@ -1,6 +1,7 @@
 # LEARN.MD
 video demo
 https://www.youtube.com/watch?v=XMTp16cP4os
+ppt:https://gamma.app/docs/LEARNMD-Interactive-Learning-Platform-2hl8u87mtbhesu9?mode=doc
 
 > **Personalized Adaptive Learning Platform to Bridge the Rural–Urban Education Gap**
 
